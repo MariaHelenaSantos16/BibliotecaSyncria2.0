@@ -204,6 +204,11 @@ public class TelaCadastro extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Erro ao realizar cadastro!! ");
         }//fim do (if/else)
+        
+        Telalogin login = new Telalogin ();
+        login.setVisible(true);
+        dispose();
+        
 
 
     }//GEN-LAST:event_butaoCadastrarActionPerformed

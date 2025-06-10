@@ -4,8 +4,14 @@
  */
 package View;
 
+import Controller.AlunoController;
 import Controller.EmprestimoController;
+import Controller.NovoLivroControler;
+import Controller.TurmaController;
+import Model.AlunoModel;
 import Model.EmprestimoModel;
+import Model.NovoLivroModel;
+import Model.TurmaModel;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,22 +25,54 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
      * Creates new form RegistrosImprestimos
      */
     EmprestimoController controller = new EmprestimoController();
-
+    TurmaController controllerr = new TurmaController();
+    AlunoController controllerrr = new AlunoController();
+    NovoLivroControler controlleerrr = new NovoLivroControler();
+    
+    
     public TelaRegistrosEmprestimos() {
         initComponents();
     }
     
-   
-   
+    private void atualizarComboBoxPlano() {
+        selecionarTurmaRE.removeAllItems();
+        selecionarTurmaRE.addItem("Escolha um plano");
+
+        TurmaController comtrollerr = new TurmaController();
+        List<TurmaModel> turmas = controllerr.ListarTurmas();
+
+        for (TurmaModel t : turmas) {
+            selecionarTurmaRE.addItem(t.getCodigoTurma());
+        }
+    }
     
     
     
+    private void atualizarrComboBoxPlano() {
+        selecionarAlunoRE1.removeAllItems();
+        selecionarAlunoRE1.addItem("Escolha um plano");
+
+        AlunoController comtrollerrr = new AlunoController();
+        List<AlunoModel> alunos = controllerrr.ListarAlunos();
+
+        for (AlunoModel a : alunos) {
+            selecionarAlunoRE1.addItem(a.getNome());
+        }
+    }
     
+    private void atualizarrrComboBoxPlano() {
+        selecionarTituloLivro.removeAllItems();
+        selecionarTituloLivro.addItem("Escolha um plano");
+
+        NovoLivroControler comtrolleerrr = new NovoLivroControler();
+        List<NovoLivroModel> livros = controllerrr.listarLivros();
+
+        for (NovoLivroModel l : livros) {
+            selecionarAlunoRE1.addItem(l.getTituloObra());
+        }
+    }
     
-    
-    
-    
-    
+
     
     
     
