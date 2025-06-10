@@ -5,6 +5,7 @@
 package Controller;
 
 import Model.AlunoModel;
+import Model.NovoLivroModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -82,6 +83,10 @@ public class AlunoController {
         return lista;
     
     }//Fim do Método de listar alunos
+
+    public List<NovoLivroModel> listarLivros() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
 }//fim da classe
