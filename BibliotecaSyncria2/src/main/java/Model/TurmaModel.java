@@ -43,17 +43,15 @@ public class TurmaModel {
         this.turno = turno;
     }
 
-    public String getCodigoDaTurma() {
+    public String getCodigoTurma() {
         return codigoTurma;
     }
 
-    public void setCodigoDaTurma(String codigoDaTurma) {
+    public void setCodigoTurma(String codigoDaTurma) {
         this.codigoTurma = codigoDaTurma;
     }
 
-    public String getCodigoTurma() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
     
 
      

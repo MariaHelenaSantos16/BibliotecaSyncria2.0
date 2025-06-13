@@ -51,7 +51,7 @@ public class TelaGraficos extends javax.swing.JFrame {
         guiaListaLivrosAcervo = new javax.swing.JMenu();
         guiaRankingLeitores = new javax.swing.JMenu();
         guiaBancoDadosTurmas = new javax.swing.JMenu();
-        guiaGrafico1 = new javax.swing.JMenu();
+        guiaGrafico = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Lista de Livros no Acervo");
@@ -64,7 +64,7 @@ public class TelaGraficos extends javax.swing.JFrame {
         escreva1.setBackground(new java.awt.Color(255, 255, 255));
         escreva1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         escreva1.setForeground(new java.awt.Color(0, 0, 0));
-        escreva1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria - Copia\\BibliotecaSyncria\\src\\main\\java\\Images\\livro_(1)_(2).png")); // NOI18N
+        escreva1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\Logo Biblioteca Syncria (64px).png")); // NOI18N
         escreva1.setText("Biblioteca Syncria");
 
         javax.swing.GroupLayout panelBrancoLayout = new javax.swing.GroupLayout(panelBranco);
@@ -73,10 +73,10 @@ public class TelaGraficos extends javax.swing.JFrame {
             panelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBrancoLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(livroI)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(escreva1, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1347, Short.MAX_VALUE))
+                .addGroup(panelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(escreva1, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(livroI))
+                .addContainerGap(1353, Short.MAX_VALUE))
         );
         panelBrancoLayout.setVerticalGroup(
             panelBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,7 +91,7 @@ public class TelaGraficos extends javax.swing.JFrame {
         escrevaGrafico.setBackground(new java.awt.Color(255, 255, 255));
         escrevaGrafico.setFont(new java.awt.Font("Segoe UI", 2, 36)); // NOI18N
         escrevaGrafico.setForeground(new java.awt.Color(0, 0, 0));
-        escrevaGrafico.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria - Copia\\BibliotecaSyncria\\src\\main\\java\\Images\\line-chart (1).png")); // NOI18N
+        escrevaGrafico.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\7.Gráficos (64px).png")); // NOI18N
         escrevaGrafico.setText("Gráficos");
 
         botAtualizar.setBackground(new java.awt.Color(255, 255, 255));
@@ -275,7 +275,7 @@ public class TelaGraficos extends javax.swing.JFrame {
 
         painelDeRolagem.setViewportView(princPanel);
 
-        guiaRegistroEmprestimo.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria - Copia\\BibliotecaSyncria\\src\\main\\java\\Images\\zregistro de emprest.png")); // NOI18N
+        guiaRegistroEmprestimo.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\1.Registro de Emprestimos (24px).png")); // NOI18N
         guiaRegistroEmprestimo.setText(" Registro de Empréstimo |");
         guiaRegistroEmprestimo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -284,7 +284,7 @@ public class TelaGraficos extends javax.swing.JFrame {
         });
         menugraficos.add(guiaRegistroEmprestimo);
 
-        guiaListaLivrosEmprestados.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria - Copia\\BibliotecaSyncria\\src\\main\\java\\Images\\livro emp. 24.png")); // NOI18N
+        guiaListaLivrosEmprestados.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\2.Lista de Livros Emprestados (24px).png")); // NOI18N
         guiaListaLivrosEmprestados.setText("Lista de Livros Emprestados |");
         guiaListaLivrosEmprestados.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -293,7 +293,7 @@ public class TelaGraficos extends javax.swing.JFrame {
         });
         menugraficos.add(guiaListaLivrosEmprestados);
 
-        guiaCadastroLivros.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria - Copia\\BibliotecaSyncria\\src\\main\\java\\Images\\cadastro de livros 24.png")); // NOI18N
+        guiaCadastroLivros.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\3.Cadastro de Livros (24px).png")); // NOI18N
         guiaCadastroLivros.setText("Cadastro de Livros |");
         guiaCadastroLivros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -304,6 +304,11 @@ public class TelaGraficos extends javax.swing.JFrame {
 
         guiaListaLivrosAcervo.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Downloads\\open-book.png")); // NOI18N
         guiaListaLivrosAcervo.setText("Lista de Livros no Acervo |");
+        guiaListaLivrosAcervo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                guiaListaLivrosAcervoMouseClicked(evt);
+            }
+        });
         menugraficos.add(guiaListaLivrosAcervo);
 
         guiaRankingLeitores.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Downloads\\ranking.png")); // NOI18N
@@ -315,7 +320,7 @@ public class TelaGraficos extends javax.swing.JFrame {
         });
         menugraficos.add(guiaRankingLeitores);
 
-        guiaBancoDadosTurmas.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria - Copia\\BibliotecaSyncria\\src\\main\\java\\Images\\grupo-de-usuarios_(1).png")); // NOI18N
+        guiaBancoDadosTurmas.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\6.Banco de Dados das Turmas (24px).png")); // NOI18N
         guiaBancoDadosTurmas.setText("Banco de Dados das Turmas |");
         guiaBancoDadosTurmas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -324,9 +329,9 @@ public class TelaGraficos extends javax.swing.JFrame {
         });
         menugraficos.add(guiaBancoDadosTurmas);
 
-        guiaGrafico1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Downloads\\vinticuatro.png")); // NOI18N
-        guiaGrafico1.setText("Gráfico");
-        menugraficos.add(guiaGrafico1);
+        guiaGrafico.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\7.Gráficos (24px).png")); // NOI18N
+        guiaGrafico.setText("Gráfico");
+        menugraficos.add(guiaGrafico);
 
         setJMenuBar(menugraficos);
 
@@ -386,7 +391,13 @@ public class TelaGraficos extends javax.swing.JFrame {
     private void guiaRankingLeitoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaRankingLeitoresMouseClicked
         // TODO add your handling code here:
         
-        
+        TelaRankingDeLeitores tela7ParaTela5 = new TelaRankingDeLeitores();
+
+        //Abrindo a tela 6 para tela 5
+        tela7ParaTela5.setVisible(true);
+
+        //Fechando a tela
+        dispose();
         
     }//GEN-LAST:event_guiaRankingLeitoresMouseClicked
 
@@ -405,6 +416,19 @@ public class TelaGraficos extends javax.swing.JFrame {
     private void botAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botAtualizarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botAtualizarActionPerformed
+
+    private void guiaListaLivrosAcervoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaListaLivrosAcervoMouseClicked
+        // TODO add your handling code here:
+        
+        //acesso da tela 6 para tela 4
+        ListaDeLivrosNoAcervo tela7ParaTela4 = new ListaDeLivrosNoAcervo();
+
+        //Abrindo a tela
+        tela7ParaTela4.setVisible(true);
+
+        //Fechando a tela
+        dispose();
+    }//GEN-LAST:event_guiaListaLivrosAcervoMouseClicked
 
     
     /**
@@ -450,7 +474,7 @@ public class TelaGraficos extends javax.swing.JFrame {
     private javax.swing.JLabel graficoIcon;
     private javax.swing.JMenu guiaBancoDadosTurmas;
     private javax.swing.JMenu guiaCadastroLivros;
-    private javax.swing.JMenu guiaGrafico1;
+    private javax.swing.JMenu guiaGrafico;
     private javax.swing.JMenu guiaListaLivrosAcervo;
     private javax.swing.JMenu guiaListaLivrosEmprestados;
     private javax.swing.JMenu guiaRankingLeitores;

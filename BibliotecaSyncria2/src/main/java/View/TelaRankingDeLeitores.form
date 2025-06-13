@@ -83,10 +83,13 @@
         <Menu class="javax.swing.JMenu" name="guiaGrafico">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ALUNO\Downloads\vinticuatro.png"/>
+              <Image iconType="2" name="C:\Users\ALUNO\Documents\NetBeansProjects\BibliotecaSyncria2.0\BibliotecaSyncria2\src\main\java\Images\7.Gr&#xe1;ficos (24px).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Gr&#xe1;fico"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="guiaGraficoMouseClicked"/>
+          </Events>
         </Menu>
       </SubComponents>
     </Menu>
@@ -150,24 +153,20 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane2" min="-2" pref="1591" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="filtroTurnos" min="-2" pref="160" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="filtroTurmaRL" min="-2" pref="160" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="botaoDeFiltrar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="botaoExportar" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="filtroTurnos" min="-2" pref="160" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="filtroTurmaRL" min="-2" pref="160" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="botaoDeFiltrar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="botaoExportar" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" min="-2" pref="1813" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="288" max="32767" attributes="0"/>
+                  <EmptySpace pref="66" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -195,8 +194,8 @@
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" pref="559" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="1120" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" min="-2" pref="784" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="895" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

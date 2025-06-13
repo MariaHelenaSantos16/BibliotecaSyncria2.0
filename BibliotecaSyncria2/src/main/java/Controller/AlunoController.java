@@ -19,7 +19,7 @@ import java.util.List;
 public class AlunoController {
     
     public boolean cadastrarAluno(AlunoModel a) {
-        String sql = "INSERT INTO Aluno (nome, livrosEmDivida, livrosEmprestados, livrosDevolvidosA, matricula, Turma_id)  VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Aluno (nome, livrosEmDivida, livrosEmprestados, livrosDevolvidosA, matricula, Turma_idTurma)  VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = ConexaoComBancoDados.conectar();
              PreparedStatement ps = conn.prepareStatement(sql)) {

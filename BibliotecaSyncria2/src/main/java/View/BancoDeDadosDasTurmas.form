@@ -83,9 +83,9 @@
         <Menu class="javax.swing.JMenu" name="guiaGrafico">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ALUNO\Downloads\vinticuatro.png"/>
+              <Image iconType="2" name="C:\Users\ALUNO\Documents\NetBeansProjects\BibliotecaSyncria2.0\BibliotecaSyncria2\src\main\java\Images\7.Gr&#xe1;ficos (24px).png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Gr&#xe1;fico"/>
+            <Property name="text" type="java.lang.String" value="Gr&#xe1;ficos"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="guiaGraficoMouseClicked"/>
@@ -118,18 +118,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
               <Component id="painelPrincipalFundo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
               <Component id="painelPrincipalFundo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -159,7 +158,7 @@
                           <Component id="jScrollPane2" min="-2" pref="1842" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="49" max="32767" attributes="0"/>
+                  <EmptySpace pref="66" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -171,8 +170,10 @@
                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                   <Component id="botaoExportar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="178" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                  <Component id="botaoAdicionarTurma" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="botaoAdicionarAluno" min="-2" pref="178" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -196,11 +197,12 @@
                       <Component id="filtroTurma" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="filtroStatus" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="botaoExportar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="botaoAdicionarAluno" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="botaoAdicionarTurma" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" pref="787" max="-2" attributes="0"/>
-                  <EmptySpace pref="34" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" min="-2" pref="744" max="-2" attributes="0"/>
+                  <EmptySpace pref="77" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -305,12 +307,12 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="iconeDoLivroSyncria" min="-2" max="-2" attributes="0"/>
+                      <Component id="iconeBibliotecaSyncria" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="letreiroSyncria" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="iconeSair" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -318,10 +320,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="letreiroSyncria" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="iconeDoLivroSyncria" min="-2" max="-2" attributes="0"/>
-                          <Component id="iconeSair" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              <Component id="iconeBibliotecaSyncria" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="iconeSair" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace pref="25" max="32767" attributes="0"/>
                   </Group>
@@ -340,7 +347,7 @@
                 <Property name="text" type="java.lang.String" value="Biblioteca Syncria"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="iconeDoLivroSyncria">
+            <Component class="javax.swing.JLabel" name="iconeBibliotecaSyncria">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="2" name="C:\Users\ALUNO\Downloads\livro (1) (2).png"/>
@@ -392,17 +399,17 @@
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="4" rowCount="40">
-                    <Column editable="false" title="Devolvidos" type="java.lang.Object"/>
-                    <Column editable="true" title="Turmas" type="java.lang.Object"/>
+                    <Column editable="false" title="Status" type="java.lang.Object"/>
+                    <Column editable="false" title="Turmas" type="java.lang.Object"/>
                     <Column editable="false" title="Alunos" type="java.lang.Object"/>
-                    <Column editable="false" title="Livros" type="java.lang.Object"/>
+                    <Column editable="false" title="N&#xba; de Livros Retirados " type="java.lang.Object"/>
                   </Table>
                 </Property>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="botaoAdicionarAluno">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -414,12 +421,33 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ALUNO\Downloads\adicionar-usuario (1).png"/>
+              <Image iconType="2" name="C:\Users\ALUNO\Documents\NetBeansProjects\BibliotecaSyncria2.0\BibliotecaSyncria2\src\main\java\Images\Adicionar Aluno(24px).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Adicionar Aluno"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoAdicionarAlunoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="botaoAdicionarTurma">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\ALUNO\Documents\NetBeansProjects\BibliotecaSyncria2.0\BibliotecaSyncria2\src\main\java\Images\Adicionar Turma.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Adicionar Turma"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoAdicionarTurmaActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

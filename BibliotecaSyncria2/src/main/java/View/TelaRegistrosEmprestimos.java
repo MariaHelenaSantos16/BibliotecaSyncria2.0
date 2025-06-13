@@ -70,11 +70,13 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
     private void initComponents() {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
+        jMenu1 = new javax.swing.JMenu();
         textoDataDevolucao = new javax.swing.JPanel();
         paineliconeSyncriaRegistros = new javax.swing.JPanel();
         tituloBibliotecaSyncria = new javax.swing.JLabel();
         iconeBilblioteca = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        iconeBibliotecaSyncria = new javax.swing.JLabel();
         selecionarTurnoRE = new javax.swing.JComboBox<>();
         tituloTurnosRE = new javax.swing.JLabel();
         tituloCodigoDeTurmaRE = new javax.swing.JLabel();
@@ -91,6 +93,7 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         tituloRegistrosEmprestimos = new javax.swing.JLabel();
         iconeRE = new javax.swing.JLabel();
+        javax.swing.JLabel iconeRegistroEmprestimos = new javax.swing.JLabel();
         textoDataDevolucaoRE = new javax.swing.JTextField();
         selecionarBimestroRE = new javax.swing.JComboBox<>();
         tituloTabelaSituacaoLivrosEmprestadosRE = new javax.swing.JTextField();
@@ -116,11 +119,15 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
         botaoRenovar = new javax.swing.JButton();
         botaoDevolver = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        guiaEmprestimos = new javax.swing.JMenu();
-        guiaLivros = new javax.swing.JMenu();
-        guiaLivrosAcervo = new javax.swing.JMenu();
+        guiaRegistroEmprestimos = new javax.swing.JMenu();
+        guiaListasLivrosEmprestados = new javax.swing.JMenu();
+        guiaCadastroLivros = new javax.swing.JMenu();
+        guiaListaLivrosAcervo = new javax.swing.JMenu();
         guiaRankingLeitores = new javax.swing.JMenu();
-        guiaBDT = new javax.swing.JMenu();
+        guiaBancoDadosTurmas = new javax.swing.JMenu();
+        guiaGrafico = new javax.swing.JMenu();
+
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,6 +143,8 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Downloads\\logout_(1).png")); // NOI18N
         jLabel1.setText("Sair");
 
+        iconeBibliotecaSyncria.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\Logo Biblioteca Syncria (64px).png")); // NOI18N
+
         javax.swing.GroupLayout paineliconeSyncriaRegistrosLayout = new javax.swing.GroupLayout(paineliconeSyncriaRegistros);
         paineliconeSyncriaRegistros.setLayout(paineliconeSyncriaRegistrosLayout);
         paineliconeSyncriaRegistrosLayout.setHorizontalGroup(
@@ -143,7 +152,9 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
             .addGroup(paineliconeSyncriaRegistrosLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(iconeBilblioteca)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(iconeBibliotecaSyncria)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tituloBibliotecaSyncria, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
@@ -152,15 +163,16 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
         paineliconeSyncriaRegistrosLayout.setVerticalGroup(
             paineliconeSyncriaRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paineliconeSyncriaRegistrosLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addGroup(paineliconeSyncriaRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(iconeBilblioteca, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tituloBibliotecaSyncria))
-                .addGap(12, 12, 12))
-            .addGroup(paineliconeSyncriaRegistrosLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paineliconeSyncriaRegistrosLayout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addGroup(paineliconeSyncriaRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(iconeBibliotecaSyncria)
+                    .addComponent(iconeBilblioteca, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
+            .addComponent(tituloBibliotecaSyncria, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         selecionarTurnoRE.setBackground(new java.awt.Color(255, 255, 255));
@@ -239,31 +251,36 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(73, 112, 138));
 
-        tituloRegistrosEmprestimos.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        tituloRegistrosEmprestimos.setFont(new java.awt.Font("Segoe UI", 2, 36)); // NOI18N
         tituloRegistrosEmprestimos.setForeground(new java.awt.Color(0, 0, 0));
         tituloRegistrosEmprestimos.setText("Registros de Empréstimos");
+
+        iconeRegistroEmprestimos.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\1.Registro de Empréstimos (64px).png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(iconeRE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(25, 25, 25)
+                .addComponent(iconeRegistroEmprestimos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tituloRegistrosEmprestimos)
-                .addContainerGap(1497, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(iconeRE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(iconeRE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(tituloRegistrosEmprestimos)
-                        .addGap(8, 8, 8)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addComponent(iconeRegistroEmprestimos)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(iconeRE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tituloRegistrosEmprestimos)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         textoDataDevolucaoRE.setBackground(new java.awt.Color(255, 255, 255));
@@ -522,7 +539,7 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
             textoDataDevolucaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(textoDataDevolucaoLayout.createSequentialGroup()
                 .addComponent(paineliconeSyncriaRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(tituloTurnosRE)
@@ -592,32 +609,46 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
                 .addGap(40, 40, 40))
         );
 
-        guiaEmprestimos.setText("| Registros Emprestimos |");
-        guiaEmprestimos.addMouseListener(new java.awt.event.MouseAdapter() {
+        guiaRegistroEmprestimos.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\1.Registro de Emprestimos (24px).png")); // NOI18N
+        guiaRegistroEmprestimos.setText("Registros de Emprestimos |");
+        guiaRegistroEmprestimos.setActionCommand("| Registros de Emprestimos |");
+        guiaRegistroEmprestimos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                guiaEmprestimosMouseClicked(evt);
+                guiaRegistroEmprestimosMouseClicked(evt);
             }
         });
-        jMenuBar1.add(guiaEmprestimos);
+        jMenuBar1.add(guiaRegistroEmprestimos);
 
-        guiaLivros.setText("Listas de Livros Emprestados |");
-        guiaLivros.setToolTipText("");
-        guiaLivros.setActionCommand("Listas de livros Empréstados  |");
-        guiaLivros.addMouseListener(new java.awt.event.MouseAdapter() {
+        guiaListasLivrosEmprestados.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\2.Lista de Livros Emprestados (24px).png")); // NOI18N
+        guiaListasLivrosEmprestados.setText("Listas de Livros Emprestados |");
+        guiaListasLivrosEmprestados.setToolTipText("");
+        guiaListasLivrosEmprestados.setActionCommand("Listas de livros Empréstados  |");
+        guiaListasLivrosEmprestados.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                guiaLivrosMouseClicked(evt);
+                guiaListasLivrosEmprestadosMouseClicked(evt);
             }
         });
-        jMenuBar1.add(guiaLivros);
+        jMenuBar1.add(guiaListasLivrosEmprestados);
 
-        guiaLivrosAcervo.setText(" Listas de livros Acervos |");
-        guiaLivrosAcervo.addMouseListener(new java.awt.event.MouseAdapter() {
+        guiaCadastroLivros.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\3.Cadastro de Livros (24px).png")); // NOI18N
+        guiaCadastroLivros.setText("Cadastro de Livros");
+        guiaCadastroLivros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                guiaLivrosAcervoMouseClicked(evt);
+                guiaCadastroLivrosMouseClicked(evt);
             }
         });
-        jMenuBar1.add(guiaLivrosAcervo);
+        jMenuBar1.add(guiaCadastroLivros);
 
+        guiaListaLivrosAcervo.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\4.Lista de Livros no Acervo (24px).png")); // NOI18N
+        guiaListaLivrosAcervo.setText(" Listas de livros Acervos |");
+        guiaListaLivrosAcervo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                guiaListaLivrosAcervoMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(guiaListaLivrosAcervo);
+
+        guiaRankingLeitores.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\5.Ranking dos Leitores (24px).png")); // NOI18N
         guiaRankingLeitores.setText("Ranking dos Leitores  |");
         guiaRankingLeitores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -626,13 +657,23 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
         });
         jMenuBar1.add(guiaRankingLeitores);
 
-        guiaBDT.setText("Banco de dados Turma |");
-        guiaBDT.addMouseListener(new java.awt.event.MouseAdapter() {
+        guiaBancoDadosTurmas.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\6.Banco de Dados das Turmas (24px).png")); // NOI18N
+        guiaBancoDadosTurmas.setText("Banco de dados Turma |");
+        guiaBancoDadosTurmas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                guiaBDTMouseClicked(evt);
+                guiaBancoDadosTurmasMouseClicked(evt);
             }
         });
-        jMenuBar1.add(guiaBDT);
+        jMenuBar1.add(guiaBancoDadosTurmas);
+
+        guiaGrafico.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\7.Gráficos (24px).png")); // NOI18N
+        guiaGrafico.setText("Gráficos");
+        guiaGrafico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                guiaGraficoMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(guiaGrafico);
 
         setJMenuBar(jMenuBar1);
 
@@ -640,23 +681,19 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(textoDataDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110))
+                .addGap(0, 116, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(textoDataDevolucao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(textoDataDevolucao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void guiaLivrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaLivrosMouseClicked
+    private void guiaListasLivrosEmprestadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaListasLivrosEmprestadosMouseClicked
         // TODO add your handling code here:
         // criando um objeto da tela1 par tela2
         ListaDeLivrosEmprestados tela1ParaTela2 = new ListaDeLivrosEmprestados();
@@ -666,24 +703,33 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
 
 // fechar a tela de atual
         dispose();
-    }//GEN-LAST:event_guiaLivrosMouseClicked
+    }//GEN-LAST:event_guiaListasLivrosEmprestadosMouseClicked
 
-    private void guiaLivrosAcervoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaLivrosAcervoMouseClicked
+    private void guiaListaLivrosAcervoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaListaLivrosAcervoMouseClicked
         // TODO add your handling code here:
-        ListaDeLivrosNoAcervo tela1ParaTela3 = new ListaDeLivrosNoAcervo();
+        ListaDeLivrosNoAcervo tela1ParaTela4 = new ListaDeLivrosNoAcervo();
 
-// abrindo a tela
-        tela1ParaTela3.setVisible(true);
+        // abrindo a tela
+        tela1ParaTela4.setVisible(true);
 
-// fechar a tela de atual
+        // fechar a tela de atual
         dispose();
-    }//GEN-LAST:event_guiaLivrosAcervoMouseClicked
+    }//GEN-LAST:event_guiaListaLivrosAcervoMouseClicked
 
     private void guiaRankingLeitoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaRankingLeitoresMouseClicked
         // TODO add your handling code here:
+        
+        TelaRankingDeLeitores tela1ParaTela6 = new TelaRankingDeLeitores();
+
+        // abrindo a tela
+        tela1ParaTela6.setVisible(true);
+
+        // fechar a tela de atual
+        dispose();
+        
     }//GEN-LAST:event_guiaRankingLeitoresMouseClicked
 
-    private void guiaBDTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaBDTMouseClicked
+    private void guiaBancoDadosTurmasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaBancoDadosTurmasMouseClicked
         // TODO add your handling code here:
         BancoDeDadosDasTurmas tela1ParaTela5 = new BancoDeDadosDasTurmas();
 
@@ -692,11 +738,11 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
 
 // fechar a tela de atual
         dispose();
-    }//GEN-LAST:event_guiaBDTMouseClicked
+    }//GEN-LAST:event_guiaBancoDadosTurmasMouseClicked
 
-    private void guiaEmprestimosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaEmprestimosMouseClicked
+    private void guiaRegistroEmprestimosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaRegistroEmprestimosMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_guiaEmprestimosMouseClicked
+    }//GEN-LAST:event_guiaRegistroEmprestimosMouseClicked
 
     private void textoRegistrosREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoRegistrosREActionPerformed
         // TODO add your handling code here:
@@ -747,6 +793,32 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_selecionarTurnoREActionPerformed
 
+    private void guiaGraficoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaGraficoMouseClicked
+        // TODO add your handling code here:
+        
+        TelaGraficos tela1ParaTela7 = new TelaGraficos();
+
+    // abrindo a tela
+        tela1ParaTela7.setVisible(true);
+
+    // fechar a tela de atual
+        dispose();
+        
+    }//GEN-LAST:event_guiaGraficoMouseClicked
+
+    private void guiaCadastroLivrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaCadastroLivrosMouseClicked
+        // TODO add your handling code here:
+        
+        TelaDeCadastroDeLivros tela1ParaTela3 = new TelaDeCadastroDeLivros();
+
+    // abrindo a tela
+        tela1ParaTela3.setVisible(true);
+
+    // fechar a tela de atual
+        dispose();
+        
+    }//GEN-LAST:event_guiaCadastroLivrosMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -790,14 +862,18 @@ public class TelaRegistrosEmprestimos extends javax.swing.JFrame {
     private javax.swing.JButton botaoGravar;
     private javax.swing.JButton botaoRenovar;
     private javax.swing.JButton butaoDataRetiradaRE;
-    private javax.swing.JMenu guiaBDT;
-    private javax.swing.JMenu guiaEmprestimos;
-    private javax.swing.JMenu guiaLivros;
-    private javax.swing.JMenu guiaLivrosAcervo;
+    private javax.swing.JMenu guiaBancoDadosTurmas;
+    private javax.swing.JMenu guiaCadastroLivros;
+    private javax.swing.JMenu guiaGrafico;
+    private javax.swing.JMenu guiaListaLivrosAcervo;
+    private javax.swing.JMenu guiaListasLivrosEmprestados;
     private javax.swing.JMenu guiaRankingLeitores;
+    private javax.swing.JMenu guiaRegistroEmprestimos;
+    private javax.swing.JLabel iconeBibliotecaSyncria;
     private javax.swing.JLabel iconeBilblioteca;
     private javax.swing.JLabel iconeRE;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
