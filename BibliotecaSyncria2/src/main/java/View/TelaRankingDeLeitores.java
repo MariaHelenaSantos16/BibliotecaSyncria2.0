@@ -27,7 +27,7 @@ public class TelaRankingDeLeitores extends javax.swing.JFrame {
     }
     
     public void listarTurmasComboBox(){
-    List<TurmaModel> listaTurmas = turmasController.ListarTurmas();
+    List<TurmaModel> listaTurmas = turmasController.listarTurmas();
     
     //limpar a comboBox
     filtroTurmaRL.removeAllItems();
@@ -237,19 +237,17 @@ public class TelaRankingDeLeitores extends javax.swing.JFrame {
                         .addComponent(letreiroRankingLeitores, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(painelPrincipalFundoLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addGroup(painelPrincipalFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelPrincipalFundoLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1591, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelPrincipalFundoLayout.createSequentialGroup()
-                                .addComponent(filtroTurnos, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(filtroTurmaRL, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(botaoDeFiltrar)
-                                .addGap(18, 18, 18)
-                                .addComponent(botaoExportar)))))
-                .addContainerGap(288, Short.MAX_VALUE))
+                        .addComponent(filtroTurnos, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(filtroTurmaRL, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botaoDeFiltrar)
+                        .addGap(18, 18, 18)
+                        .addComponent(botaoExportar))
+                    .addGroup(painelPrincipalFundoLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1813, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         painelPrincipalFundoLayout.setVerticalGroup(
             painelPrincipalFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,8 +268,8 @@ public class TelaRankingDeLeitores extends javax.swing.JFrame {
                         .addComponent(filtroTurmaRL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(botaoDeFiltrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1120, 1120, 1120))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(895, 895, 895))
         );
 
         guiaRegistroEmprestimo.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Downloads\\registro.png")); // NOI18N
@@ -328,8 +326,13 @@ public class TelaRankingDeLeitores extends javax.swing.JFrame {
         });
         menuDeNavegacao.add(guiaBancoDadosTurmas);
 
-        guiaGrafico.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Downloads\\vinticuatro.png")); // NOI18N
+        guiaGrafico.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\7.Gráficos (24px).png")); // NOI18N
         guiaGrafico.setText("Gráfico");
+        guiaGrafico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                guiaGraficoMouseClicked(evt);
+            }
+        });
         menuDeNavegacao.add(guiaGrafico);
 
         setJMenuBar(menuDeNavegacao);
@@ -402,11 +405,14 @@ public class TelaRankingDeLeitores extends javax.swing.JFrame {
 
     private void guiaRankingLeitoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaRankingLeitoresMouseClicked
         // TODO add your handling code here:
+        
+        
+      
     }//GEN-LAST:event_guiaRankingLeitoresMouseClicked
 
     private void guiaCadastroLivrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaCadastroLivrosMouseClicked
         // TODO add your handling code here:
-        /*
+        
         //acesso da Tela 5 para tela 3
         TelaDeCadastroDeLivros tela5paratela3 = new  TelaDeCadastroDeLivros ();
         
@@ -415,7 +421,7 @@ public class TelaRankingDeLeitores extends javax.swing.JFrame {
         
         //Fechando a tela
         dispose();
-        */
+        
     }//GEN-LAST:event_guiaCadastroLivrosMouseClicked
 
     private void guiaListaLivrosEmprestadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaListaLivrosEmprestadosMouseClicked
@@ -437,6 +443,20 @@ public class TelaRankingDeLeitores extends javax.swing.JFrame {
         //Processo de fechar o Aplicativo
         dispose();
     }//GEN-LAST:event_iconeSairMouseClicked
+
+    private void guiaGraficoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaGraficoMouseClicked
+        // TODO add your handling code here:
+        
+        //acesso da tela 6 para tela 7
+        TelaGraficos tela6ParaTela7 = new TelaGraficos();
+
+        //Abrindo a tela
+        tela6ParaTela7.setVisible(true);
+
+        //Fechando a tela
+        dispose();
+        
+    }//GEN-LAST:event_guiaGraficoMouseClicked
 
     /**
      * @param args the command line arguments
