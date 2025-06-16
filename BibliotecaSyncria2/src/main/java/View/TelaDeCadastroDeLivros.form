@@ -6,6 +6,9 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="guiaRegistroEmprestimo">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\ALUNO\Documents\NetBeansProjects\BibliotecaSyncria2.0\BibliotecaSyncria2\src\main\java\Images\1.Registro de Emprestimos (24px).png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Registro de Empr&#xe9;stimo |"/>
           </Properties>
           <Events>
@@ -14,6 +17,9 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="guiaListaLivrosEmprestados">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\ALUNO\Documents\NetBeansProjects\BibliotecaSyncria2.0\BibliotecaSyncria2\src\main\java\Images\2.Lista de Livros Emprestados (24px).png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Lista de Livros Emprestados |"/>
           </Properties>
           <Events>
@@ -22,6 +28,9 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="guiaCadastroLivros">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\ALUNO\Documents\NetBeansProjects\BibliotecaSyncria2.0\BibliotecaSyncria2\src\main\java\Images\3.Cadastro de Livros (24px).png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Cadastro de Livros |"/>
           </Properties>
           <Events>
@@ -30,6 +39,9 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="guiaListaLivrosAcervo">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\ALUNO\Documents\NetBeansProjects\BibliotecaSyncria2.0\BibliotecaSyncria2\src\main\java\Images\4.Lista de Livros no Acervo (24px).png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Lista de Livros no Acervo |"/>
           </Properties>
           <Events>
@@ -38,6 +50,9 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="guiaRankingLeitores">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\ALUNO\Documents\NetBeansProjects\BibliotecaSyncria2.0\BibliotecaSyncria2\src\main\java\Images\5.Ranking dos Leitores (24px).png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Ranking dos Leitores |"/>
           </Properties>
           <Events>
@@ -46,6 +61,9 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="guiaBancoDadosTurmas">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\ALUNO\Documents\NetBeansProjects\BibliotecaSyncria2.0\BibliotecaSyncria2\src\main\java\Images\6.Banco de Dados das Turmas (24px).png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Banco de Dados das Turmas |"/>
           </Properties>
           <Events>
@@ -54,6 +72,9 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="guiaGrafico">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\ALUNO\Documents\NetBeansProjects\BibliotecaSyncria2.0\BibliotecaSyncria2\src\main\java\Images\7.Gr&#xe1;ficos (24px).png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Grafico"/>
           </Properties>
           <Events>
@@ -203,6 +224,9 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\ALUNO\Documents\NetBeansProjects\BibliotecaSyncria2.0\BibliotecaSyncria2\src\main\java\Images\3.Cadastro de Livros (64px).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastro de Livros"/>
           </Properties>

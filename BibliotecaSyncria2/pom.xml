@@ -26,4 +26,5 @@
             <version>RELEASE250</version>
         </dependency>
     </dependencies>
+    <name>BibliotecaSyncria2-1</name>
 </project>
