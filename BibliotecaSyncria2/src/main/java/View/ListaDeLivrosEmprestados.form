@@ -189,21 +189,27 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                      <Component id="filtrar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="tabelaRolagem" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="simboloPonto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="escrevaLista" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="1243" max="32767" attributes="0"/>
-                      <Component id="botao1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="escrevaLista" min="-2" pref="496" max="-2" attributes="0"/>
+                              <EmptySpace pref="1243" max="32767" attributes="0"/>
+                              <Component id="botao1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                              <Component id="boxTurno" min="-2" pref="170" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="filtrarTurma" min="-2" pref="170" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <Component id="tabelaRolagem" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -218,8 +224,11 @@
                           <Component id="simboloPonto" min="-2" pref="68" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="filtrar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="25" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="boxTurno" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="filtrarTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="29" max="32767" attributes="0"/>
                       <Component id="tabelaRolagem" min="-2" pref="621" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -242,7 +251,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="simboloPonto">
             </Component>
-            <Component class="javax.swing.JComboBox" name="filtrar">
+            <Component class="javax.swing.JComboBox" name="filtrarTurma">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -254,18 +263,13 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="6">
-                    <StringItem index="0" value="Filtrar"/>
-                    <StringItem index="1" value="Ordem Alfab&#xe9;tica"/>
-                    <StringItem index="2" value="N&#xfa;mero de C&#xf3;digos"/>
-                    <StringItem index="3" value="Data"/>
-                    <StringItem index="4" value="Turma"/>
-                    <StringItem index="5" value="Bimestre"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="Turma"/>
                   </StringArray>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="filtrarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="filtrarTurmaActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -287,8 +291,8 @@
                         <Column editable="false" title="Alunos" type="java.lang.Object"/>
                         <Column editable="false" title="Nome do Livro" type="java.lang.Object"/>
                         <Column editable="false" title="Registro" type="java.lang.Object"/>
+                        <Column editable="true" title="Data da Retirada" type="java.lang.Object"/>
                         <Column editable="false" title="Data de Devolu&#xe7;&#xe3;o" type="java.lang.Object"/>
-                        <Column editable="false" title="Bimestre" type="java.lang.Object"/>
                       </Table>
                     </Property>
                   </Properties>
@@ -311,6 +315,27 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao1ActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="boxTurno">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="1">
+                    <StringItem index="0" value="Turno"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>

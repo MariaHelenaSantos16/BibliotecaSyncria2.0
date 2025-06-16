@@ -16,9 +16,6 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="guiaRegistroEmprestimo">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ALUNO\Downloads\registro.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Registro de Empr&#xe9;stimo |"/>
           </Properties>
           <Events>
@@ -27,9 +24,6 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="guiaListaLivrosEmprestados">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ALUNO\Downloads\livro_emp._24.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Lista de Livros Emprestados |"/>
           </Properties>
           <Events>
@@ -38,9 +32,6 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="guiaCadastroLivros">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ALUNO\Downloads\livro (2).png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Cadastro de Livros |"/>
           </Properties>
           <Events>
@@ -71,9 +62,6 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="guiaBancoDadosTurmas">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ALUNO\Downloads\grupo-de-usuarios (1).png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Banco de Dados das Turmas |"/>
           </Properties>
           <Events>
@@ -282,9 +270,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ALUNO\Downloads\exportar.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Exportar"/>
           </Properties>
         </Component>
@@ -323,7 +308,7 @@
                           <Component id="iconeDoLivroSyncria" min="-2" max="-2" attributes="0"/>
                           <Component id="iconeSair" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="25" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -341,19 +326,11 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="iconeDoLivroSyncria">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\ALUNO\Downloads\livro (1) (2).png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="iconeSair">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\ALUNO\Downloads\logout_(1).png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sair"/>
               </Properties>
@@ -364,11 +341,6 @@
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="iconeUsuariosBDDadosdasTurmas">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ALUNO\Downloads\grupo-de-usuarios.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="letreiroBDdasTurmas">
           <Properties>
@@ -412,9 +384,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ALUNO\Downloads\adicionar-usuario (1).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Adicionar Aluno"/>
           </Properties>

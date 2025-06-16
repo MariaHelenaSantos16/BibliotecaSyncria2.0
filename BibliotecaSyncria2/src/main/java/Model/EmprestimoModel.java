@@ -21,7 +21,15 @@ public class EmprestimoModel {
     private int livro_idLivro;
     private int emprestados;
     private int total;
-    private int noAcervo;
+    private int noAcervo;             
+     //capturar nome do plano
+    private String numeroTurma;
+    private String turnoTurma; 
+     private String nomeAluno;
+    private String nomeLivro;
+     private String registroLivro;
+    private String dataDevolverAluno;
+    private String dataRetiradaAluno;
 
     public EmprestimoModel() {
     }
@@ -37,6 +45,62 @@ public class EmprestimoModel {
         this.emprestados = emprestados;
         this.total = total;
         this.noAcervo = noAcervo;
+    }
+
+    public String getDataRetiradaAluno() {
+        return dataRetiradaAluno;
+    }
+
+    public void setDataRetiradaAluno(String dataRetiradaAluno) {
+        this.dataRetiradaAluno = dataRetiradaAluno;
+    }
+
+    public String getNumeroTurma() {
+        return numeroTurma;
+    }
+
+    public void setNumeroTurma(String numeroTurma) {
+        this.numeroTurma = numeroTurma;
+    }
+
+    public String getTurnoTurma() {
+        return turnoTurma;
+    }
+
+    public void setTurnoTurma(String turnoTurma) {
+        this.turnoTurma = turnoTurma;
+    }
+
+    public String getNomeAluno() {
+        return nomeAluno;
+    }
+
+    public void setNomeAluno(String nomeAluno) {
+        this.nomeAluno = nomeAluno;
+    }
+
+    public String getNomeLivro() {
+        return nomeLivro;
+    }
+
+    public void setNomeLivro(String nomeLivro) {
+        this.nomeLivro = nomeLivro;
+    }
+
+    public String getRegistroLivro() {
+        return registroLivro;
+    }
+
+    public void setRegistroLivro(String registroLivro) {
+        this.registroLivro = registroLivro;
+    }
+
+    public String getDataDevolverAluno() {
+        return dataDevolverAluno;
+    }
+
+    public void setDataDevolverAluno(String dataDevolverAluno) {
+        this.dataDevolverAluno = dataDevolverAluno;
     }
     
     
@@ -121,6 +185,10 @@ public class EmprestimoModel {
 
     public void setNoAcervo(int noAcervo) {
         this.noAcervo = noAcervo;
+    }
+
+    public void setLivrosDevolvidosAluno(int aInt) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
   
     

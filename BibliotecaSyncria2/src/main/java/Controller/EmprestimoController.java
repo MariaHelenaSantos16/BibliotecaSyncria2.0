@@ -46,7 +46,11 @@ public class EmprestimoController {
         //criar uma váriavel para receber a lista
         List<EmprestimoModel> lista = new ArrayList<>();
         //comando sql para listar dados do banco de dados
-        String sql = "SELECT * FROM Emprestimo";
+        String sql = " SELECT em.*,al.nome as nomeAluno, al.dataDevolucao , tu.turno as turnoTurma, tu.codigoTurma, li.tituloObra as nomeLivro, li.numeroRegistro FROM Emprestimo em" 
+               + " INNER JOIN Aluno al ON al.idAluno = em.aluno_idAluno"
+               +"  INNER JOIN Turma tu ON tu.idTurma = em.aluno_Turma_idTurma"
+               +"  INNER JOIN Livro li ON li.idLivro = em.livro_idLivro";
+
 
         try (Connection conn = ConexaoComBancoDados.conectar();
                 PreparedStatement ps = conn.prepareStatement(sql);
@@ -62,6 +66,16 @@ public class EmprestimoController {
                 emp.setIdEmprestimo(rs.getInt("IdEmprestimo"));
                 emp.setLivrosDevolvidos(rs.getInt("livrosDevolvidos"));
                 emp.setSaldo(rs.getInt("saldo"));
+                
+                emp.setTurnoTurma(rs.getString("turnoTurma"));            
+                emp.setNumeroTurma(rs.getString("codigoTurma"));
+                emp.setNomeAluno(rs.getString("nomeAluno")); 
+                emp.setNomeLivro(rs.getString("nomeLivro"));              
+                emp.setRegistroLivro(rs.getString("numeroRegistro"));
+                emp.setDataDevolverAluno(rs.getString("dataDevolucao"));
+                emp.setDataRetiradaAluno(rs.getString("dataRetirada"));
+                
+                   
                 //jogando os cliente dentro da lista
                 lista.add(emp);
 
@@ -72,9 +86,7 @@ public class EmprestimoController {
         }//fim do catch
         
         return lista;
-        
-        
-        
+    
     } //fim do metodo listar
     
     

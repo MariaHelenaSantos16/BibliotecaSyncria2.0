@@ -17,6 +17,7 @@ public class AlunoModel {
     private int livrosDevolvidosA;
     private int matricula;
     private int turmaId; // representa o campo Turma_id
+    private String dataDevolucao;
 
     // Construtor vazio
     public AlunoModel() {}
@@ -34,6 +35,17 @@ public class AlunoModel {
 
     // Getters e Setters
 
+    public String getDataDevolucao() {
+        return dataDevolucao;
+    }
+
+    public void setDataDevolucao(String dataDevolucao) {
+        this.dataDevolucao = dataDevolucao;
+    }
+
+    
+    
+    
     public int getIdAluno() {
         return idAluno;
     }

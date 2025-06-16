@@ -4,19 +4,119 @@
  */
 package View;
 
+import Controller.NovoLivroControler;
+import Model.NovoLivroModel;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ALUNO
  */
+
 public class ListaDeLivrosNoAcervo extends javax.swing.JFrame {
 
     /**
      * Creates new form ListaDeLivrosNoAcervo
      */
+
+    
+    
+    //Conexao com o BD com o controller
+    NovoLivroControler livroController = new NovoLivroControler();
+    
     public ListaDeLivrosNoAcervo() {
         initComponents();
     }
+    
+    //metodo para listar dados na tabela
+    public void listarLivrosTabela() {
+        List<NovoLivroModel> listaLivros = livroController.listarLivros();
 
+        //criação modelo padrao de tabela
+        DefaultTableModel modelo = new DefaultTableModel();
+
+        for (NovoLivroModel l : listaLivros) {
+            modelo.addRow(new Object[]{
+                //ordem que está na tabela das telas.
+                l.getTituloObra(),
+            l.getDataCadastro(),
+            l.getGenerosLiterarios(),
+            l.getSubgenerosLiterarios(),
+            l.getAutor(),
+            l.getNumeroRegistro(),
+            l.getEdicao(),
+            l.getVolume(),
+            l.getLocalizacao(),
+            l.getEditora(),
+            l.getAnoPublicacao(), 
+            l.getAquisicao(),
+            l.getExemplar(),
+            l.getNumeroChamada()
+        }//fim do for
+            );
+        }//fim do for
+    }//fim do metodo de listar dados
+
+
+    
+    
+    
+    
+public void listarGenerosComboBox(){
+    List<NovoLivroModel>listaGeneros = livroController.listarLivros();
+
+    //limpar a comboBox
+    comboFiltro.removeAllItems();
+
+    //jogar os dados da lista dentro da comboBox
+    for(NovoLivroModel nlm: listaGeneros){
+        comboFiltro.addItem(nlm.getGenerosLiterarios());
+        }//fim do for
+    }//fim do metodo listarTurmasComboBox
+    
+
+
+
+    
+public void listarAutorComboBox(){
+    List<NovoLivroModel>listaAutor = livroController.listarLivros();
+
+    //limpar a comboBox
+    boxAutor.removeAllItems();
+
+    //jogar os dados da lista dentro da comboBox
+    for(NovoLivroModel lm: listaAutor){
+        boxAutor.addItem(lm.getAutor());
+        }//fim do for
+    }//fim do metodo listarTurmasComboBox
+    
+    
+    
+    
+    
+public void listarDataComboBox(){
+    List<NovoLivroModel> listaData = livroController.listarLivros();
+
+    //limpar a comboBox
+    jComboBoxData.removeAllItems();
+
+    //jogar os dados da lista dentro da comboBox
+    for(NovoLivroModel lm: listaData){
+        jComboBoxData.addItem(lm.getDataCadastro());
+        }//fim do for
+    }//fim do metodo listarTurmasComboBox
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -275,59 +375,56 @@ public class ListaDeLivrosNoAcervo extends javax.swing.JFrame {
 
     private void guiaRegistroEmprestimoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaRegistroEmprestimoMouseClicked
         // TODO add your handling code here:
-        
-         
+
         //criar objeto da classe 
         TelaRegistrosEmprestimos registroEmprestimo = new TelaRegistrosEmprestimos();
-               // abrindo a tela
-                registroEmprestimo.setVisible(true);
+        // abrindo a tela
+        registroEmprestimo.setVisible(true);
         // fechar tela de login
-                    dispose();
-            ;
+        dispose();
+        ;
     }//GEN-LAST:event_guiaRegistroEmprestimoMouseClicked
 
     private void guiaListaLivrosEmprestadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaListaLivrosEmprestadosMouseClicked
         // TODO add your handling code here:
-        
-        
+
         //criar objeto da classe 
         ListaDeLivrosEmprestados listaEmprestado = new ListaDeLivrosEmprestados();
-               // abrindo a tela
-                listaEmprestado.setVisible(true);
+        // abrindo a tela
+        listaEmprestado.setVisible(true);
         // fechar tela de login
-                    dispose();
-            ;
+        dispose();
+        ;
     }//GEN-LAST:event_guiaListaLivrosEmprestadosMouseClicked
 
     private void guiaCadastroLivrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaCadastroLivrosMouseClicked
         // TODO add your handling code here:
-        
-             //criar objeto da classe 
+
+        //criar objeto da classe 
         TelaDeCadastroDeLivros cadastroLivro = new TelaDeCadastroDeLivros();
-               // abrindo a tela
-                cadastroLivro.setVisible(true);
+        // abrindo a tela
+        cadastroLivro.setVisible(true);
         // fechar tela de login
-                    dispose();
-            ;
+        dispose();
+        ;
     }//GEN-LAST:event_guiaCadastroLivrosMouseClicked
 
     private void guiaRankingLeitoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaRankingLeitoresMouseClicked
         // TODO add your handling code here:
-        
-        
-        
+
+
     }//GEN-LAST:event_guiaRankingLeitoresMouseClicked
 
     private void guiaBancoDadosTurmasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaBancoDadosTurmasMouseClicked
         // TODO add your handling code here:
-        
+
         //criar objeto da classe 
         BancoDeDadosDasTurmas bancoDadosTurma = new BancoDeDadosDasTurmas();
-               // abrindo a tela
-                bancoDadosTurma.setVisible(true);
+        // abrindo a tela
+        bancoDadosTurma.setVisible(true);
         // fechar tela de login
-                    dispose();
-            ;
+        dispose();
+        ;
     }//GEN-LAST:event_guiaBancoDadosTurmasMouseClicked
 
     
@@ -335,36 +432,36 @@ public class ListaDeLivrosNoAcervo extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+    /* Set the Nimbus look and feel */
+    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+     */
+    try {
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            if ("Nimbus".equals(info.getName())) {
+                javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                break;
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListaDeLivrosNoAcervo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListaDeLivrosNoAcervo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListaDeLivrosNoAcervo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListaDeLivrosNoAcervo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ListaDeLivrosNoAcervo().setVisible(true);
-            }
-        });
+    } catch (ClassNotFoundException ex) {
+        java.util.logging.Logger.getLogger(ListaDeLivrosNoAcervo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (InstantiationException ex) {
+        java.util.logging.Logger.getLogger(ListaDeLivrosNoAcervo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (IllegalAccessException ex) {
+        java.util.logging.Logger.getLogger(ListaDeLivrosNoAcervo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        java.util.logging.Logger.getLogger(ListaDeLivrosNoAcervo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
+    //</editor-fold>
+
+    /* Create and display the form */
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            new ListaDeLivrosNoAcervo().setVisible(true);
+        }
+    });
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> boxAutor;
