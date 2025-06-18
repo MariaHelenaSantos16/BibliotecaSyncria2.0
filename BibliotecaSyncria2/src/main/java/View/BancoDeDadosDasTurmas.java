@@ -29,14 +29,15 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
     /**
      * Creates new form BancoDeDadosDasTurmas
      */
+    
     //Conexao com o BD com o controller
     TurmaController turmasController = new TurmaController();
-
+    
+     
     public BancoDeDadosDasTurmas() {
         initComponents();
         listarTurmasComboBox();
     }
-
     /*
     //metodo para listar dados na tabela
     public void listarTurmasTabela(){
@@ -59,20 +60,26 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
    
     
     }//fim do metodo de listar dados
-     */
-    public void listarTurmasComboBox() {
-        List<TurmaModel> listaTurmas = turmasController.listarTurmas();
-
-        //limpar a comboBox
-        filtroTurma.removeAllItems();
-
-        //jogar os dados da lista dentro da comboBox
-        for (TurmaModel tu : listaTurmas) {
-            filtroTurma.addItem(tu.getCodigoTurma());
-        }//fim do for
-
+    */  
+    
+    public void listarTurmasComboBox(){
+    List<TurmaModel> listaTurmas = turmasController.listarTurmas();
+    
+    //limpar a comboBox
+    filtroTurma.removeAllItems();
+    
+    //jogar os dados da lista dentro da comboBox
+    for(TurmaModel tu:listaTurmas){
+         filtroTurma.addItem(tu.getCodigoTurma());
+    }//fim do for
+    
+        
     }//fim do metodo listarTurmasComboBox
-
+    
+    
+ 
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -91,14 +98,13 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
         botaoExportar = new javax.swing.JButton();
         cabecalhoSyncria = new javax.swing.JPanel();
         letreiroSyncria = new javax.swing.JLabel();
-        iconeBibliotecaSyncria = new javax.swing.JLabel();
+        iconeDoLivroSyncria = new javax.swing.JLabel();
         iconeSair = new javax.swing.JLabel();
         iconeUsuariosBDDadosdasTurmas = new javax.swing.JLabel();
         letreiroBDdasTurmas = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabelaBDTurmas = new javax.swing.JTable();
-        botaoAdicionarAluno = new javax.swing.JButton();
-        botaoAdicionarTurma = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         menuDeNavegacao = new javax.swing.JMenuBar();
         guiaRegistroEmprestimo = new javax.swing.JMenu();
         guiaListaLivrosEmprestados = new javax.swing.JMenu();
@@ -155,7 +161,7 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
         letreiroSyncria.setForeground(new java.awt.Color(0, 0, 0));
         letreiroSyncria.setText("Biblioteca Syncria");
 
-        iconeBibliotecaSyncria.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Downloads\\livro (1) (2).png")); // NOI18N
+        iconeDoLivroSyncria.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Downloads\\livro (1) (2).png")); // NOI18N
 
         iconeSair.setForeground(new java.awt.Color(0, 0, 0));
         iconeSair.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Downloads\\logout_(1).png")); // NOI18N
@@ -172,24 +178,21 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
             cabecalhoSyncriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cabecalhoSyncriaLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(iconeBibliotecaSyncria)
+                .addComponent(iconeDoLivroSyncria)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(letreiroSyncria)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(iconeSair)
-                .addGap(23, 23, 23))
+                .addGap(14, 14, 14))
         );
         cabecalhoSyncriaLayout.setVerticalGroup(
             cabecalhoSyncriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(letreiroSyncria, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(cabecalhoSyncriaLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
                 .addGroup(cabecalhoSyncriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cabecalhoSyncriaLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(iconeBibliotecaSyncria))
-                    .addGroup(cabecalhoSyncriaLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(iconeSair)))
+                    .addComponent(iconeDoLivroSyncria)
+                    .addComponent(iconeSair))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -243,11 +246,11 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Status", "Turmas", "Alunos", "Nº de Livros Retirados "
+                "Devolvidos", "Turmas", "Alunos", "Livros"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, true, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -256,26 +259,14 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tabelaBDTurmas);
 
-        botaoAdicionarAluno.setBackground(new java.awt.Color(255, 255, 255));
-        botaoAdicionarAluno.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        botaoAdicionarAluno.setForeground(new java.awt.Color(0, 0, 0));
-        botaoAdicionarAluno.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\Adicionar Aluno(24px).png")); // NOI18N
-        botaoAdicionarAluno.setText("Adicionar Aluno");
-        botaoAdicionarAluno.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Downloads\\adicionar-usuario (1).png")); // NOI18N
+        jButton1.setText("Adicionar Aluno");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoAdicionarAlunoActionPerformed(evt);
-            }
-        });
-
-        botaoAdicionarTurma.setBackground(new java.awt.Color(255, 255, 255));
-        botaoAdicionarTurma.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        botaoAdicionarTurma.setForeground(new java.awt.Color(0, 0, 0));
-        botaoAdicionarTurma.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\Adicionar Turma.png")); // NOI18N
-        botaoAdicionarTurma.setText("Adicionar Turma");
-        botaoAdicionarTurma.setToolTipText("");
-        botaoAdicionarTurma.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoAdicionarTurmaActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -294,7 +285,7 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
                     .addGroup(painelPrincipalFundoLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1842, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
             .addGroup(painelPrincipalFundoLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(filtroTurnos, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -305,10 +296,8 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addComponent(botaoExportar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoAdicionarTurma)
-                .addGap(33, 33, 33)
-                .addComponent(botaoAdicionarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63))
         );
         painelPrincipalFundoLayout.setVerticalGroup(
             painelPrincipalFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,11 +316,10 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
                     .addComponent(filtroTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(filtroStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoExportar)
-                    .addComponent(botaoAdicionarAluno)
-                    .addComponent(botaoAdicionarTurma))
+                    .addComponent(jButton1))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 744, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         guiaRegistroEmprestimo.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Downloads\\registro.png")); // NOI18N
@@ -388,8 +376,8 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
         });
         menuDeNavegacao.add(guiaBancoDadosTurmas);
 
-        guiaGrafico.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\7.Gráficos (24px).png")); // NOI18N
-        guiaGrafico.setText("Gráficos");
+        guiaGrafico.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Downloads\\vinticuatro.png")); // NOI18N
+        guiaGrafico.setText("Gráfico");
         guiaGrafico.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 guiaGraficoMouseClicked(evt);
@@ -403,15 +391,16 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(painelPrincipalFundo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 12, Short.MAX_VALUE)
+                .addComponent(painelPrincipalFundo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(painelPrincipalFundo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 8, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -460,10 +449,10 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
 
     private void guiaRankingLeitoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaRankingLeitoresMouseClicked
         // TODO add your handling code here:
-        TelaRankingDeLeitores tela2ParaTela5 = new TelaRankingDeLeitores();
+        TelaRankingDeLeitores tela6ParaTela5 = new TelaRankingDeLeitores();
 
         //Abrindo a tela 6 para tela 5
-        tela2ParaTela5.setVisible(true);
+        tela6ParaTela5.setVisible(true);
 
         //Fechando a tela
         dispose();
@@ -471,7 +460,7 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
 
     private void guiaCadastroLivrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaCadastroLivrosMouseClicked
         // TODO add your handling code here:
-        
+          /*
         //acesso da Tela 6 para tela 3
         TelaDeCadastroDeLivros tela6paratela3 = new TelaDeCadastroDeLivros();
 
@@ -480,7 +469,7 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
 
         //Fechando a tela
         dispose();
-         
+        */
     }//GEN-LAST:event_guiaCadastroLivrosMouseClicked
 
     private void guiaListaLivrosEmprestadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaListaLivrosEmprestadosMouseClicked
@@ -516,15 +505,13 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_iconeSairMouseClicked
 
-    private void botaoAdicionarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarAlunoActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-            
-        //JOPTIONPANE ADICIONAR ALUNO
-        // Painel e fonte
-        JPanel panel = new JPanel(new GridLayout(0, 2, 5, 5)); // linhas dinâmicas, 2 colunas, espaçamento de 10px
+
+        JPanel panel = new JPanel(new GridLayout(0, 2, 5, 5)); // linhas dinâmicas, 2 colunas, espaço de 10px
         Font fonte = new Font("Segoe UI", Font.PLAIN, 16);
 
-// Nome do aluno
+// Nome do Aluno
         JLabel nomeLabel = new JLabel("Nome do Aluno:");
         nomeLabel.setFont(fonte);
         JTextField nomeField = new JTextField(20);
@@ -540,54 +527,48 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
         panel.add(matriculaLabel);
         panel.add(matriculaField);
 
-// Turmas (carregadas do banco)
+// Turno
+        JLabel turnoLabel = new JLabel("Turno:");
+        turnoLabel.setFont(fonte);
+        String[] turnos = {"Manhã", "Tarde", "Noite"};
+        JComboBox<String> turnoComboBox = new JComboBox<>(turnos);
+        turnoComboBox.setFont(fonte);
+        panel.add(turnoLabel);
+        panel.add(turnoComboBox);
+
+// Turma (campo de texto)
         JLabel turmaLabel = new JLabel("Turma:");
         turmaLabel.setFont(fonte);
-
-// Buscar turmas do banco
-        List<TurmaModel> listaTurmas = turmasController.listarTurmas();
-
-// Extrair códigos para o combo
-        String[] codigosTurmas = listaTurmas.stream()
-                .map(TurmaModel::getCodigoTurma)
-                .toArray(String[]::new);
-
-        JComboBox<String> comboTurmas = new JComboBox<>(codigosTurmas);
-        comboTurmas.setFont(fonte);
-
+        JTextField turmaField = new JTextField(10);
+        turmaField.setFont(fonte);
         panel.add(turmaLabel);
-        panel.add(comboTurmas);
+        panel.add(turmaField);
 
-// Exibir painel em JOptionPane
-        int result = JOptionPane.showConfirmDialog(null, panel, "Cadastro de Aluno",
-                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+// Exibe o painel com os campos
+        int result = JOptionPane.showConfirmDialog(null, panel, "Cadastro de Aluno", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 
-// Se clicou em OK
+// Se o usuário clicar em OK
         if (result == JOptionPane.OK_OPTION) {
             try {
+                // Pega os dados dos campos
                 String nome = nomeField.getText().trim();
-                String matriculaTexto = matriculaField.getText().trim();
-                int matricula = Integer.parseInt(matriculaTexto); // conversão aqui
+                int matricula = Integer.parseInt(matriculaField.getText().trim());
+                String turnoSelecionado = (String) turnoComboBox.getSelectedItem();
+                String codigoTurma = turmaField.getText().trim();
 
-                String codigoSelecionado = (String) comboTurmas.getSelectedItem();
+                // Aqui simula pegar o id da turma pelo código (por enquanto usando um ID fixo ou fazer busca se quiser)
+                int turmaId = 1; // Depois substituir por busca real no banco
 
-                // Buscar o idTurma correspondente ao código selecionado
-                int turmaIdSelecionado = 0;
-                for (TurmaModel turma : listaTurmas) {
-                    if (turma.getCodigoTurma().equals(codigoSelecionado)) {
-                        turmaIdSelecionado = turma.getIdTurma();
-                        break;
-                    }
-                }
-
-                // Criar objeto Aluno com os dados
+                // Cria o objeto AlunoModel com os dados
                 AlunoModel aluno = new AlunoModel();
                 aluno.setNome(nome);
-                aluno.setMatricula(matricula); // agora é inteiro
+                aluno.setMatricula(matricula);
+                aluno.setLivrosEmDivida(0);
+                aluno.setLivrosEmprestados(0);
+                aluno.setLivrosDevolvidosA(0);
+                aluno.setTurmaId(turmaId);
 
-                aluno.setTurmaId(turmaIdSelecionado);
-
-                // Cadastrar aluno
+                // Chama o controller
                 AlunoController controller = new AlunoController();
                 boolean sucesso = controller.cadastrarAluno(aluno);
 
@@ -596,82 +577,14 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
                 } else {
                     JOptionPane.showMessageDialog(null, "Erro ao cadastrar aluno.", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
-
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "A matrícula deve ser um número inteiro.", "Erro", JOptionPane.ERROR_MESSAGE);
-            } catch (Exception e) {
+            } catch (Exception ex) {
+                ex.printStackTrace();
                 JOptionPane.showMessageDialog(null, "Erro nos dados inseridos. Verifique e tente novamente.", "Erro", JOptionPane.ERROR_MESSAGE);
             }
         }
 
-    }//GEN-LAST:event_botaoAdicionarAlunoActionPerformed
 
-    private void botaoAdicionarTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarTurmaActionPerformed
-        // TODO add your handling code here:
-        
-         // Painel e fonte
-        JPanel panelTurma = new JPanel(new GridLayout(0, 2, 5, 5));
-        Font fonte = new Font("Segoe UI", Font.PLAIN, 16);
-
-        // Código da Turma
-        JLabel codigoLabel = new JLabel("Código da Turma:");
-        codigoLabel.setFont(fonte);
-        JTextField codigoField = new JTextField(15);
-        codigoField.setFont(fonte);
-        panelTurma.add(codigoLabel);
-        panelTurma.add(codigoField);
-
-        // Turno
-        JLabel turnoLabel = new JLabel("Turno:");
-        turnoLabel.setFont(fonte);
-        String[] opcoesTurno = {"Matutino", "Vespertino", "Noturno"};
-        JComboBox<String> turnoCombo = new JComboBox<>(opcoesTurno);
-        turnoCombo.setFont(fonte);
-        panelTurma.add(turnoLabel);
-        panelTurma.add(turnoCombo);
-
-        // Exibir painel
-        int resultTurma = JOptionPane.showConfirmDialog(
-            null,
-            panelTurma,
-            "Cadastro de Turma",
-            JOptionPane.OK_CANCEL_OPTION,
-            JOptionPane.PLAIN_MESSAGE
-        );
-
-        if (resultTurma == JOptionPane.OK_OPTION) {
-            String codigo = codigoField.getText().trim();
-            String turno = (String) turnoCombo.getSelectedItem();
-
-            // Verifica se os campos estão preenchidos
-            if (codigo.isEmpty() || turno == null || turno.trim().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos.", "Campos obrigatórios", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            try {
-                // Criar objeto Turma
-                TurmaModel novaTurma = new TurmaModel();
-                novaTurma.setCodigoTurma(codigo);
-                novaTurma.setTurno(turno);
-
-                // Cadastrar turma
-                TurmaController turmaController = new TurmaController();
-                boolean sucesso = turmaController.cadastrarTurma(novaTurma);
-
-                if (sucesso) {
-                    JOptionPane.showMessageDialog(null, "Turma cadastrada com sucesso!");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Erro ao cadastrar turma", "Erro", JOptionPane.ERROR_MESSAGE);
-                }
-
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "Erro nos dados inseridos. Verifique e tente novamente.", "Erro", JOptionPane.ERROR_MESSAGE);
-            }
-        }//fim do 1° if
-
-
-    }//GEN-LAST:event_botaoAdicionarTurmaActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -712,8 +625,6 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoAdicionarAluno;
-    private javax.swing.JButton botaoAdicionarTurma;
     private javax.swing.JButton botaoExportar;
     private javax.swing.JPanel cabecalhoSyncria;
     private javax.swing.JComboBox<String> filtroStatus;
@@ -726,9 +637,10 @@ public class BancoDeDadosDasTurmas extends javax.swing.JFrame {
     private javax.swing.JMenu guiaListaLivrosEmprestados;
     private javax.swing.JMenu guiaRankingLeitores;
     private javax.swing.JMenu guiaRegistroEmprestimo;
-    private javax.swing.JLabel iconeBibliotecaSyncria;
+    private javax.swing.JLabel iconeDoLivroSyncria;
     private javax.swing.JLabel iconeSair;
     private javax.swing.JLabel iconeUsuariosBDDadosdasTurmas;
+    private javax.swing.JButton jButton1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel letreiroBDdasTurmas;

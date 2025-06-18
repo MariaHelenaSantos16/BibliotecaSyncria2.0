@@ -4,6 +4,7 @@
  */
 package Controller;
 
+import Model.AlunoModel;
 import Model.NovoLivroModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 ;
 
@@ -22,7 +24,9 @@ import java.util.List;
 public class NovoLivroControler {
 
     public void inserirLivro(NovoLivroModel livro) {
-        String sql = "INSERT INTO livro (tituloObra, numeroCopias, dataCadastro, generosLiterarios, subgenerosLiterarios, autor, numeroRegistro, edicao, volume, localizacao, editora, anoFabricacao, anoPublicacao, aquisicao, exemplar, numeroChamada, isbn, statusLivros, observacoes, quantidadeTituloEmprestado, quantidadeTituloAcervo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO livro (tituloObra, numeroCopias, dataCadastro, generosLiterarios, subgenerosLiterarios, autor, numeroRegistro, edicao, volume, localizacao,"
+                + " editora, anoFabricacao, anoPublicacao, aquisicao, exemplar, numeroChamada, isbn, statusLivros, observacoes, quantidadeTituloEmprestado, quantidadeTituloAcervo) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = ConexaoComBancoDados.conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
 
@@ -58,19 +62,17 @@ public class NovoLivroControler {
     public List<NovoLivroModel> listarLivros() {
         // criar uma variavel para receber a lista 
 
-        List<NovoLivroModel> lista = new ArrayList<>();
+        List<NovoLivroModel> listaLivros = new ArrayList<>();
         //comando sql para lista dados do BD 
         String sql = "select * from livro";
 
-        try (Connection conn = ConexaoComBancoDados.conectar();
-                PreparedStatement ps = conn.prepareStatement(sql); 
-                ResultSet rs = ps.executeQuery()) {
+        try (Connection conn = ConexaoComBancoDados.conectar(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
 
             // laço de repetiçao parcorrer a lista  de livros 
             while (rs.next()) {
                 NovoLivroModel nl = new NovoLivroModel();
-                  
-               nl.setAnoFabricacao(rs.getInt("AnoFabricacao"));
+
+                nl.setAnoFabricacao(rs.getInt("AnoFabricacao"));
                 nl.setAnoPublicacao(rs.getInt("AnoPublicacao"));
                 nl.setAquisicao(rs.getString("Aquisicao"));
                 nl.setAutor(rs.getString("Autor"));
@@ -93,7 +95,7 @@ public class NovoLivroControler {
                 nl.setTituloObra(rs.getString("TituloObra"));
                 nl.setVolume(rs.getString("Volume"));
                 //jogando os livros 
-                lista.add(nl);
+                listaLivros.add(nl);
 
             }// fim while 
 
@@ -102,7 +104,54 @@ public class NovoLivroControler {
 
         }//FIM DO CATCH
 
-        return lista;
+        return listaLivros;
     }// fim do metodo listar     
 
-}
+    public List<NovoLivroModel> pesquisarLivro(String nomeBusca) {
+        List<NovoLivroModel> listaLivros = new ArrayList<>();
+        String sql = "SELECT l.*, l.tituloObra, l.generosLiterarios FROM Livro l WHERE l.tituloObra LIKE ? OR l.Autor LIKE ? OR l.isbn LIKE ? OR l.generosLiterarios LIKE ?";
+
+        try (Connection conn = ConexaoComBancoDados.conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, "%" + nomeBusca + "%");
+            stmt.setString(2, "%" + nomeBusca + "%");
+            stmt.setString(3, "%" + nomeBusca + "%");
+            stmt.setString(4, "%" + nomeBusca + "%");
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                NovoLivroModel livro = new NovoLivroModel();
+                livro.setAnoFabricacao(rs.getInt("AnoFabricacao"));
+                livro.setAnoPublicacao(rs.getInt("AnoPublicacao"));
+                livro.setAquisicao(rs.getString("Aquisicao"));
+                livro.setAutor(rs.getString("Autor"));
+                livro.setDataCadastro(rs.getString("DataCadastro"));
+                livro.setEdicao(rs.getString("Edicao"));
+                livro.setEditora(rs.getString("Edicao"));
+                livro.setExemplar(rs.getString("Exemplar"));
+                livro.setGenerosLiterarios(rs.getNString("generosLiterarios"));
+                livro.setIdLivro(rs.getInt("IdLivro"));
+                livro.setIsbn(rs.getString("isbn"));
+                livro.setLocalizacao(rs.getString("Localizacao"));
+                livro.setNumeroChamada(rs.getString("NumeroChamada"));
+                livro.setNumeroCopias(rs.getInt("NumeroCopias"));
+                livro.setNumeroRegistro(rs.getInt("NumeroRegistro"));
+                livro.setObservacoes(rs.getString("Observacoes"));
+                livro.setQuantidadeTituloAcervo(rs.getInt("quantidadeTituloAcervo"));
+                livro.setQuantidadeTituloEmprestado(rs.getInt("quantidadeTituloEmprestado"));
+                livro.setStatusLivros(rs.getString("statusLivros"));
+                livro.setSubgenerosLiterarios(rs.getString("SubgenerosLiterarios"));
+                livro.setTituloObra(rs.getString("TituloObra"));
+                livro.setVolume(rs.getString("Volume"));
+                listaLivros.add(livro);
+            }//fim do while
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro ao pesquisar aluno: " + e.getMessage());
+        }//fim do catch
+
+        return listaLivros;
+    }//fim do pesquisar
+
+}//FIM DO CONTROLLER

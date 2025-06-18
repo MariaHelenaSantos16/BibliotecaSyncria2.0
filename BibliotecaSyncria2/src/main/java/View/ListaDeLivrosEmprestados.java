@@ -34,14 +34,16 @@ public class ListaDeLivrosEmprestados extends javax.swing.JFrame {
         listarTurmaComboBox();
     }
 
+   
+    
     //Listando a tabelaa com mais de 2 
     //metodo para listar dados na tabela
     public void listarEmprestimosTabela() {
         List<EmprestimoModel> listaEmprestimos = emprestimoController.listarEmprestimos();
 
         //criação modelo padrao de tabela
-        DefaultTableModel modelo = new DefaultTableModel();
-
+        DefaultTableModel modelo = (DefaultTableModel) priTabela.getModel();
+            modelo.setRowCount(0);
         for (EmprestimoModel em : listaEmprestimos) {
             modelo.addRow(new Object[]{
                 //ordem que está na tabela das telas.    
@@ -55,23 +57,15 @@ public class ListaDeLivrosEmprestados extends javax.swing.JFrame {
             em.getDataRetiradaAluno()
 
         }//fim do for
-        
+          
     
             );
         }//fim do for
+        priTabela.setModel(modelo);
     }//fim do metodo de listar dados
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
+  
 public void listarTurnoComboBox(){
     List<TurmaModel> listaTurno = turmaController.listarTurmas();
 
@@ -136,6 +130,7 @@ public void listarTurmaComboBox(){
         guiaRankingLeitores = new javax.swing.JMenu();
         guiaBancoDadosTurmas = new javax.swing.JMenu();
         guiaGrafico = new javax.swing.JMenu();
+        guiaGrafico1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Lista de Livros Emprestados");
@@ -145,14 +140,14 @@ public void listarTurmaComboBox(){
         escreva1.setBackground(new java.awt.Color(0, 0, 0));
         escreva1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         escreva1.setForeground(new java.awt.Color(0, 0, 0));
-        escreva1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\Logo Biblioteca Syncria (64px).png")); // NOI18N
+        escreva1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria - Copia\\BibliotecaSyncria\\src\\main\\java\\Images\\livro_(1)_(2).png")); // NOI18N
         escreva1.setText("Biblioteca Syncria");
 
         penalBranco.setBackground(new java.awt.Color(73, 112, 138));
 
         escrevaLista.setFont(new java.awt.Font("Segoe UI", 2, 36)); // NOI18N
         escrevaLista.setForeground(new java.awt.Color(0, 0, 0));
-        escrevaLista.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\2.Lista de Livros Emprestados (64px).png")); // NOI18N
+        escrevaLista.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria - Copia\\BibliotecaSyncria\\src\\main\\java\\Images\\livro emp. 64.png")); // NOI18N
         escrevaLista.setText("Lista de Livros Emprestados");
 
         filtrarTurma.setBackground(new java.awt.Color(255, 255, 255));
@@ -382,7 +377,7 @@ public void listarTurmaComboBox(){
                 .addComponent(penalBranco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        guiaRegistroEmprestimo.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\1.Registro de Emprestimos (24px).png")); // NOI18N
+        guiaRegistroEmprestimo.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria - Copia\\BibliotecaSyncria\\src\\main\\java\\Images\\zregistro de emprest.png")); // NOI18N
         guiaRegistroEmprestimo.setText(" Registro de Empréstimo |");
         guiaRegistroEmprestimo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -391,7 +386,7 @@ public void listarTurmaComboBox(){
         });
         menuDeNavegacao.add(guiaRegistroEmprestimo);
 
-        guiaListaLivrosEmprestados.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\2.Lista de Livros Emprestados (24px).png")); // NOI18N
+        guiaListaLivrosEmprestados.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria - Copia\\BibliotecaSyncria\\src\\main\\java\\Images\\livro emp. 24.png")); // NOI18N
         guiaListaLivrosEmprestados.setText("Lista de Livros Emprestados |");
         guiaListaLivrosEmprestados.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -400,7 +395,7 @@ public void listarTurmaComboBox(){
         });
         menuDeNavegacao.add(guiaListaLivrosEmprestados);
 
-        guiaCadastroLivros.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\3.Cadastro de Livros (24px).png")); // NOI18N
+        guiaCadastroLivros.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria - Copia\\BibliotecaSyncria\\src\\main\\java\\Images\\cadastro de livros 24.png")); // NOI18N
         guiaCadastroLivros.setText("Cadastro de Livros |");
         guiaCadastroLivros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -427,7 +422,7 @@ public void listarTurmaComboBox(){
         });
         menuDeNavegacao.add(guiaRankingLeitores);
 
-        guiaBancoDadosTurmas.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\6.Banco de Dados das Turmas (24px).png")); // NOI18N
+        guiaBancoDadosTurmas.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria - Copia\\BibliotecaSyncria\\src\\main\\java\\Images\\grupo-de-usuarios_(1).png")); // NOI18N
         guiaBancoDadosTurmas.setText("Banco de Dados das Turmas |");
         guiaBancoDadosTurmas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -435,15 +430,11 @@ public void listarTurmaComboBox(){
             }
         });
         menuDeNavegacao.add(guiaBancoDadosTurmas);
-
-        guiaGrafico.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Documents\\NetBeansProjects\\BibliotecaSyncria2.0\\BibliotecaSyncria2\\src\\main\\java\\Images\\7.Gráficos (24px).png")); // NOI18N
-        guiaGrafico.setText("Gráfico");
-        guiaGrafico.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                guiaGraficoMouseClicked(evt);
-            }
-        });
         menuDeNavegacao.add(guiaGrafico);
+
+        guiaGrafico1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ALUNO\\Downloads\\vinticuatro.png")); // NOI18N
+        guiaGrafico1.setText("Gráfico");
+        menuDeNavegacao.add(guiaGrafico1);
 
         setJMenuBar(menuDeNavegacao);
 
@@ -493,7 +484,6 @@ public void listarTurmaComboBox(){
                     dispose();
             ;
     }//GEN-LAST:event_guiaBancoDadosTurmasMouseClicked
-
     private void guiaListaLivrosAcervoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaListaLivrosAcervoMouseClicked
 
         // TODO add your handling code here:
@@ -507,7 +497,6 @@ public void listarTurmaComboBox(){
             ;
         
     }//GEN-LAST:event_guiaListaLivrosAcervoMouseClicked
-
     private void guiaRegistroEmprestimoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaRegistroEmprestimoMouseClicked
         // TODO add your handling code here:
         
@@ -521,7 +510,6 @@ public void listarTurmaComboBox(){
             
             
     }//GEN-LAST:event_guiaRegistroEmprestimoMouseClicked
-
     private void guiaCadastroLivrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaCadastroLivrosMouseClicked
         // TODO add your handling code here
         
@@ -533,32 +521,11 @@ public void listarTurmaComboBox(){
                     dispose();
             ;
     }//GEN-LAST:event_guiaCadastroLivrosMouseClicked
-
     private void guiaRankingLeitoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaRankingLeitoresMouseClicked
         // TODO add your handling code here:
         
-         TelaRankingDeLeitores tela1ParaTela6 = new TelaRankingDeLeitores();
-
-        // abrindo a tela
-        tela1ParaTela6.setVisible(true);
-
-        // fechar a tela de atual
-        dispose();
+        
     }//GEN-LAST:event_guiaRankingLeitoresMouseClicked
-
-    private void guiaGraficoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guiaGraficoMouseClicked
-        // TODO add your handling code here:
-        
-        //acesso da tela 6 para tela 7
-        TelaGraficos tela2ParaTela7 = new TelaGraficos();
-
-        //Abrindo a tela
-        tela2ParaTela7.setVisible(true);
-
-        //Fechando a tela
-        dispose();
-        
-    }//GEN-LAST:event_guiaGraficoMouseClicked
 
     
     
@@ -622,6 +589,7 @@ public void listarTurmaComboBox(){
     private javax.swing.JMenu guiaBancoDadosTurmas;
     private javax.swing.JMenu guiaCadastroLivros;
     private javax.swing.JMenu guiaGrafico;
+    private javax.swing.JMenu guiaGrafico1;
     private javax.swing.JMenu guiaListaLivrosAcervo;
     private javax.swing.JMenu guiaListaLivrosEmprestados;
     private javax.swing.JMenu guiaRankingLeitores;

@@ -22,18 +22,14 @@ public class EmprestimoModel {
     private int emprestados;
     private int total;
     private int noAcervo;             
-     //capturar nome das variaveis necessarias para tabela do Caetano
+     //capturar nome do plano
     private String numeroTurma;
     private String turnoTurma; 
      private String nomeAluno;
     private String nomeLivro;
-     private String registroLivro;  
+     private String registroLivro;
     private String dataDevolverAluno;
     private String dataRetiradaAluno;
-    
-    //Variaveis da Tabeela BD Turmas 
-    private String statusEmprestimoAluno;
-    private int NdeLivrosRetirados;
 
     public EmprestimoModel() {
     }
@@ -49,22 +45,6 @@ public class EmprestimoModel {
         this.emprestados = emprestados;
         this.total = total;
         this.noAcervo = noAcervo;
-    }
-
-    public String getStatusEmprestimoAluno() {
-        return statusEmprestimoAluno;
-    }
-
-    public void setStatusEmprestimoAluno(String statusEmprestimoAluno) {
-        this.statusEmprestimoAluno = statusEmprestimoAluno;
-    }
-
-    public int getNdeLivrosRetirados() {
-        return NdeLivrosRetirados;
-    }
-
-    public void setNdeLivrosRetirados(int NdeLivrosRetirados) {
-        this.NdeLivrosRetirados = NdeLivrosRetirados;
     }
 
     public String getDataRetiradaAluno() {
